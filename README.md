@@ -22,7 +22,7 @@ Proyecto universitario para monitorear en tiempo real el ambiente de un hámster
 - **Frontend:** React
 - **Backend:** Node.js con Express
 - **Base de datos:** MongoDB
-- **Sensores:** Raspberry Pi + varios módulos
+- **Sensores:** ESP32 + varios módulos
 - **Nube:** AWS EC2, S3, RDS
 
 ## 🧪 DevOps - Flujo de Ramas
