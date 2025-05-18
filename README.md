@@ -1,14 +1,14 @@
-# 🐹 Monitoreo de Hábitat para Hámster
+# Monitoreo de Hábitat para Hámster
 
-Proyecto universitario para monitorear en tiempo real el ambiente de un hámster (temperatura, luz, CO₂, cámara) con sensores y una interfaz web. El sistema incluye backend, frontend y despliegue en la nube (AWS).
+Proyecto universitario para monitorear en tiempo real el ambiente de un hámster con sensores y una interfaz web. El sistema incluye backend, frontend y despliegue en la nube (AWS).
 
-## 🎯 Objetivos
+## Objetivos
 
 - Automatizar el monitoreo del hábitat de un hámster
 - Visualización en tiempo real con cámara y gráficos
 - Registro histórico de las condiciones del entorno
 
-## 🧠 Integrantes y Roles
+##  Integrantes y Roles
 
 | Nombre     | Rol                         |
 |------------|-----------------------------|
@@ -17,7 +17,7 @@ Proyecto universitario para monitorear en tiempo real el ambiente de un hámster
 | Margarita  | Análisis, documentación     |
 | Sensores   | Equipo (Rodrigo + Didier)   |
 
-## 🛠️ Tecnologías
+##  Tecnologías
 
 - **Frontend:** React
 - **Backend:** Node.js con Express
@@ -25,7 +25,7 @@ Proyecto universitario para monitorear en tiempo real el ambiente de un hámster
 - **Sensores:** ESP32 + varios módulos
 - **Nube:** AWS EC2, S3, RDS
 
-## 🧪 DevOps - Flujo de Ramas
+## DevOps - Flujo de Ramas
 
 - `main` → Producción
 - `qa` → Validación
