@@ -32,3 +32,4 @@ Proyecto universitario para monitorear en tiempo real el ambiente de un hámster
 - `dev` → Desarrollo general
 - `hu/#` → Historias de usuario (funcionalidades)
 - `issue/#` → Correcciones y bugs
+- `new/#` → cambios
