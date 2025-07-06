@@ -7,10 +7,10 @@ import { UserRouter } from './auth/infrasctucture/router/UserRoutes';
 import { AnimalRouter } from './animal/infrasctucture/routes/AnimalRoutes';
 import { CameraRouter } from './camera/infrasctructure/routes/CameraRoutes';
 import { dhtRouter } from './dht11/infrasctructure/routes/dht11Routes';
-import { MqttService } from './services/rabbitMQTT/RabbitMQService';
+// import { MqttService } from './services/rabbitMQTT/RabbitMQService';
 import { SaveDHT11DataUseCase } from './dht11/application/SaveDHT11DataUseCase';
 import { MySQLDHT11Repository } from './dht11/infrasctructure/adapters/mysql/MySQLDHT11Repository';
-import { Server as SocketIOServer } from 'socket.io';
+// import { Server as SocketIOServer } from 'socket.io';
 import jwt from 'jsonwebtoken';
 import axios from 'axios';
 
@@ -38,9 +38,9 @@ const mqttPort = parseInt(process.env.MQTT_PORT as string);
 const mqttUser = process.env.MQTT_USER as string;
 const mqttPassword = process.env.MQTT_PASSWORD as string;
 
-const mqttService = new MqttService(mqttServer, mqttPort, mqttUser, mqttPassword, saveDHT11DataUseCase);
+// const mqttService = new MqttService(mqttServer, mqttPort, mqttUser, mqttPassword, saveDHT11DataUseCase);
 
-mqttService.connect();
+// mqttService.connect();
 
 const server = app.listen(PORT, async () => {
   try {
@@ -54,33 +54,33 @@ const server = app.listen(PORT, async () => {
 });
 
 // Configuración del servidor Socket.IO
-const io = new SocketIOServer(server, {
-  cors: {
-    origin: '*',
-  },
-});
+// const io = new SocketIOServer(server, {
+//   cors: {
+//     origin: '*',
+//   },
+// });
 
-io.use((socket, next) => {
-  const token = socket.handshake.query.token;
+// io.use((socket, next) => {
+//   const token = socket.handshake.query.token;
 
-  if (token) {
-    jwt.verify(token as string, process.env.SECRET_KEY!, (err: any) => {
-      if (err) return next(new Error('Authentication error'));
-      next();
-    });
-  } else {
-    next(new Error('Authentication error'));
-  }
-});
+//   if (token) {
+//     jwt.verify(token as string, process.env.SECRET_KEY!, (err: any) => {
+//       if (err) return next(new Error('Authentication error'));
+//       next();
+//     });
+//   } else {
+//     next(new Error('Authentication error'));
+//   }
+// });
 
-io.on('connection', (socket) => {
-  console.log('Client authenticated and connected');
+// io.on('connection', (socket) => {
+//   console.log('Client authenticated and connected');
 
-  socket.on('disconnect', () => {
-    console.log('Client disconnected');
-    console.log()
-  });
-});
+//   socket.on('disconnect', () => {
+//     console.log('Client disconnected');
+//     console.log()
+//   });
+// });
 
 async function sendDataToClients() {
   try {
@@ -96,7 +96,7 @@ async function sendDataToClients() {
 
    
 
-    io.emit('dht11Data', filteredData);
+    // io.emit('dht11Data', filteredData);
   } catch (error) {
     console.error('Error fetching data or sending to WebSocket:', error);
   }
