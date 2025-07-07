@@ -15,7 +15,7 @@ Proyecto universitario para monitorear en tiempo real el ambiente de un hámster
 | Rodrigo    | Frontend                    |
 | Didier     | Backend, API, DB, sensores  |
 | Margarita  | Análisis, documentación     |
-| Sensores   | Equipo (Rodrigo + Didier)   |
+
 
 ## 🛠️ Tecnologías
 
