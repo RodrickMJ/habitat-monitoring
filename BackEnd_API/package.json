@@ -17,12 +17,17 @@
     "test:dht11": "jest src/test/dht11 --coverage --verbose",
     "test:camera": "jest src/test/camera --coverage --verbose",
     
-    "test:issue19": "jest src/test/register --coverage --verbose --testNamePattern=\"Issue #19\"",
     "test:rg01": "jest src/test/register/RG01.test.ts --verbose",
     "test:rg02": "jest src/test/register/RG02.test.ts --verbose",
     "test:rg03": "jest src/test/register/RG03.test.ts --verbose",
     "test:rg04": "jest src/test/register/RG04.test.ts --verbose",
     "test:rg05": "jest src/test/register/RG05.test.ts --verbose",
+
+    "test:lg01": "jest src/test/login/LG01.test.ts --verbose",
+    "test:lg02": "jest src/test/login/LG02.test.ts --verbose",
+    "test:lg03": "jest src/test/login/LG03.test.ts --verbose",
+    "test:lg04": "jest src/test/login/LG04.test.ts --verbose",
+    "test:lg05": "jest src/test/login/LG05.test.ts --verbose",
     
     "test:ci": "jest --ci --coverage --watchAll=false --passWithNoTests",
     "test:debug": "jest --detectOpenHandles --forceExit --verbose",

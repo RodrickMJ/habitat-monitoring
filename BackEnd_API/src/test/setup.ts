@@ -7,6 +7,7 @@ process.env.NODE_ENV = 'test';
 process.env.PORT = '3001'; // Puerto diferente al dev
 process.env.DB_NAME = 'hamster'; // Nombre correcto de la DB
 process.env.JWT_SECRET = 'test_jwt_secret_key_for_automated_testing';
+process.env.SECRET_KEY = 'test_jwt_secret_key_for_automated_testing'; // Por si usa SECRET_KEY
 process.env.DB_HOST = 'localhost';
 process.env.DB_PORT = '3306';
 process.env.DB_USER = 'didi20'; // Usuario correcto
