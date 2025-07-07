@@ -17,7 +17,7 @@ export function FormAnimal() {
     notes: ""
   });
 
-  const navigate = useNavigate(); // Inicializa useNavigate
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -46,9 +46,9 @@ export function FormAnimal() {
         throw new Error(errorData.message || "Error al registrar el animal");
       }
 
-      // Mostrar alerta y redirigir a la página de DatosAnimalito
+  
       alert("¡Registro exitoso! Cuidaremos de Tu Animalito :)");
-      navigate("/DatosAnimalito"); // Redirige a la página deseada
+      navigate("/DatosAnimalito"); 
     } catch (error) {
       console.error("Error en el registro:", error);
       alert("Error en el registro: " + error.message);

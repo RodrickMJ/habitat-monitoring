@@ -11,21 +11,22 @@ import { SocketProvider } from "./Context/soquet";
 function App() {
   return (
 
-     <Router>
-         <SocketProvider>
-         <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/Formulario" element={<LoginForm />} />
-        <Route path="/Camara" element={<Camera />} />
-        <Route path="/Monitoreo" element={<Monitoring />} />
-        <Route path="/DatosAnimalito" element={<AnimalData />} />
-        <Route path="/Personaliza" element={<Customizeanimal />} />
-      </Routes>
-         </SocketProvider>
-     
+    <Router>
+      <SocketProvider>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/Formulario" element={<LoginForm />} />
+          <Route path="/Camara" element={<Camera />} />
+          <Route path="/Monitoreo" element={<Monitoring />} />
+          <Route path="/DatosAnimalito" element={<AnimalData />} />
+          <Route path="/Personaliza" element={<Customizeanimal />} />
+        </Routes>
+      </SocketProvider>
+
     </Router>
 
   );
 }
 
 export default App;
+
