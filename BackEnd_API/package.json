@@ -28,6 +28,15 @@
     "test:lg03": "jest src/test/login/LG03.test.ts --verbose",
     "test:lg04": "jest src/test/login/LG04.test.ts --verbose",
     "test:lg05": "jest src/test/login/LG05.test.ts --verbose",
+
+    "test:an01": "jest src/test/animal/AN01.test.ts --verbose",
+    "test:an02": "jest src/test/animal/AN02.test.ts --verbose", 
+    "test:an03": "jest src/test/animal/AN03.test.ts --verbose",
+    "test:an04": "jest src/test/animal/AN04.test.ts --verbose",
+    "test:an05": "jest src/test/animal/AN05.test.ts --verbose",
+    "test:an06": "jest src/test/animal/AN06.test.ts --verbose",
+    "test:an07": "jest src/test/animal/AN07.test.ts --verbose",
+    "test:an08": "jest src/test/animal/AN08.test.ts --verbose",
     
     "test:ci": "jest --ci --coverage --watchAll=false --passWithNoTests",
     "test:debug": "jest --detectOpenHandles --forceExit --verbose",
