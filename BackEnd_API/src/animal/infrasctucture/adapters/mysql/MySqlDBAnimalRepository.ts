@@ -23,11 +23,31 @@ export class MysqlAnimalRepository implements AnimalRepository {
         ));
     }
 
-    async registerAnimal(animal: Animal): Promise<void> {
+    // ✅ CAMBIO PRINCIPAL: Devolver Promise<Animal> en lugar de Promise<void>
+    async registerAnimal(animal: Animal): Promise<Animal> {
         const connection = await testConnection();
 
         const sql = 'INSERT INTO animals (name, breed, species, age, gender, color, size, ownerId, notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
-        await connection.execute(sql, [animal.name, animal.breed, animal.species, animal.age, animal.gender, animal.color, animal.size, animal.ownerId, animal.notes]);
+        
+        // ✅ CAMBIO: Obtener el resultado del INSERT para obtener el ID generado
+        const [result] = await connection.execute(sql, [
+            animal.name, 
+            animal.breed, 
+            animal.species, 
+            animal.age, 
+            animal.gender, 
+            animal.color, 
+            animal.size, 
+            animal.ownerId, 
+            animal.notes
+        ]);
+
+        // ✅ CAMBIO: Asignar el ID generado al animal
+        const insertResult = result as any;
+        animal.id = insertResult.insertId.toString(); // Convertir a string si tu Animal usa string para ID
+
+        // ✅ CAMBIO: Devolver el animal con el ID asignado
+        return animal;
     }
 
     async getById(id: string): Promise<Animal | null> {
