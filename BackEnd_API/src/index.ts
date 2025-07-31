@@ -1,5 +1,5 @@
 import express from 'express';
-import cors from 'cors'; 
+import cors from 'cors';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import { testConnection } from './database/mysql/mysqldb';
@@ -88,13 +88,13 @@ async function sendDataToClients() {
     const { data } = response.data;
 
     const filteredData = data.map((item: any) => ({
-      
+
       temperature: item.temperature,
       humidity: item.humidity
     }));
 
 
-   
+
 
     // io.emit('dht11Data', filteredData);
   } catch (error) {

@@ -18,7 +18,7 @@ const io = new Server(server, {
         methods: ["GET", "POST"],
         allowedHeaders: ["Authorization"],
         credentials: true
-    } ,
+    },
     allowRequest: authMiddleware
 });
 
@@ -27,12 +27,12 @@ io.on('connection', (socket) => {
     console.log('Un cliente se ha conectado');
 
     socket.on('dataDHT11', (data) => {
-        
+
         const dataSend = JSON.parse(data)
-      const messageFront =  emitData(dataSend)
-      console.log(messageFront); 
-      
-     io.emit('sensors',messageFront )
+        const messageFront = emitData(dataSend)
+        console.log(messageFront);
+
+        io.emit('sensors', messageFront)
 
     });
 
