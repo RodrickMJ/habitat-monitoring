@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getByIdAnimalController = exports.getAllAnimalController = exports.registerAnimalController = exports.getByIdAnimalUseCase = exports.getAllAnimalUseCase = exports.registerAnimalUseCase = void 0;
+const RegisterAnimalController_1 = require("./controller/RegisterAnimalController");
+const GetAllAnimalController_1 = require("./controller/GetAllAnimalController");
+const GetByIdAnimalController_1 = require("./controller/GetByIdAnimalController");
+const RegisterAnimalUseCase_1 = require("../application/RegisterAnimalUseCase");
+const GetAllAnimalUseCase_1 = require("../application/GetAllAnimalUseCase");
+const GetByIdAnimalUseCase_1 = require("../application/GetByIdAnimalUseCase");
+const MySqlDBAnimalRepository_1 = require("./adapters/mysql/MySqlDBAnimalRepository");
+const animalRepository = new MySqlDBAnimalRepository_1.MysqlAnimalRepository();
+exports.registerAnimalUseCase = new RegisterAnimalUseCase_1.RegisterAnimalUseCase(animalRepository);
+exports.getAllAnimalUseCase = new GetAllAnimalUseCase_1.GetAllAnimalUseCase(animalRepository);
+exports.getByIdAnimalUseCase = new GetByIdAnimalUseCase_1.GetByIdAnimalUseCase(animalRepository);
+exports.registerAnimalController = new RegisterAnimalController_1.RegisterAnimalController(exports.registerAnimalUseCase);
+exports.getAllAnimalController = new GetAllAnimalController_1.GetAllAnimalController(exports.getAllAnimalUseCase);
+exports.getByIdAnimalController = new GetByIdAnimalController_1.GetByIdAnimalController(exports.getByIdAnimalUseCase);
