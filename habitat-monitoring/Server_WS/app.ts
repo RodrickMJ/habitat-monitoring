@@ -6,7 +6,7 @@ import authMiddleware from "./src/authMiddleware"
 import emitData from "./src/helpers/EmitData"
 
 dotenv.config();
-const Port = 8082;
+const Port = 3001;
 
 const app = express();
 const server = http.createServer(app);

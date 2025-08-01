@@ -17,7 +17,7 @@ import axios from 'axios';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 7070;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
@@ -84,7 +84,7 @@ const server = app.listen(PORT, async () => {
 
 async function sendDataToClients() {
   try {
-    const response = await axios.get('http://localhost:8080/api/v1/dht11/all');
+    const response = await axios.get('http://localhost:3000/api/v1/dht11/all');
     const { data } = response.data;
 
     const filteredData = data.map((item: any) => ({
