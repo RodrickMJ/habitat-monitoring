@@ -1,5 +1,7 @@
 # 🐹 Monitoreo de Hábitat para Hámster
 # Implementacion de despliegue continuo con Docker-Compose
+# cambios dockerfile
+
 Proyecto universitario para monitorear en tiempo real el ambiente de un hámster (temperatura, luz, CO₂, cámara) con sensores y una interfaz web. El sistema incluye backend, frontend y despliegue en la nube (AWS).
 
 ## 🎯 Objetivos
