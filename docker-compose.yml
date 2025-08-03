@@ -1,0 +1,45 @@
+ services:
+   rest-api:
+     build:
+       context: './habitat-monitoring/BackEnd_API'
+       dockerfile: dockerfile
+     environment:
+       - NODE_ENV=production
+     env_file: ./habitat-monitoring/BackEnd_API/.env
+     networks:
+       - backend
+     ports:
+       - "3000:3000"
+
+   socket: 
+     build:
+       context: './habitat-monitoring/Server_WS'
+       dockerfile: dockerfile
+     environment:
+      - GIN_MODE=release
+      - PORT=3001
+     networks:
+       - backend
+     ports:
+       - "3001:3001"
+
+   frontend:
+      build:
+        context: './habitat-monitoring/FrontEnd'
+        dockerfile: dockerfile
+      container_name: frontend
+      restart: always
+      environment:
+        - NODE_ENV=production
+      networks:
+        - backend
+      depends_on:
+        - rest-api
+      ports:
+        - "80:80"
+
+ networks:
+   backend:
+     driver: bridge
+
+
