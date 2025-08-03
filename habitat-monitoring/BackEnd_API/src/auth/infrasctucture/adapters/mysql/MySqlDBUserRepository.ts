@@ -43,19 +43,19 @@ export class MysqlUserRepository implements UserRepository {
 
     async logout(token: string): Promise<void> {
         const connection = await testConnection();
-        const sql = 'UPDATE Users SET token = NULL WHERE token = ?'; 
+        const sql = 'UPDATE users SET token = NULL WHERE token = ?'; 
         await connection.execute(sql, [token]);
     }
 
     async updateToken(id: string, token: string | null): Promise<void> {
         const connection = await testConnection();
-        const sql = 'UPDATE Users SET token = ? WHERE id = ?';
+        const sql = 'UPDATE users SET token = ? WHERE id = ?';
         await connection.execute(sql, [token, id]);
     }
 
     async getById(id: string): Promise<User | null> {
         const connection = await testConnection();
-        const sql = 'SELECT * FROM Users WHERE id = ?';
+        const sql = 'SELECT * FROM users WHERE id = ?';
         const [rows] = await connection.execute(sql, [id]);
         const users = rows as any[];
     

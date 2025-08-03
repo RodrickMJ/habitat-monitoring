@@ -5,7 +5,7 @@
        dockerfile: dockerfile
      environment:
        - NODE_ENV=production
-     env_file: ./src/Api/.env
+     env_file: ./habitat-monitoring/BackEnd_API/.env
      networks:
        - backend
      ports:
@@ -13,7 +13,7 @@
 
    socket: 
      build:
-       context: './src/Socket'
+       context: './habitat-monitoring/Server_WS'
        dockerfile: dockerfile
      environment:
       - GIN_MODE=release
@@ -25,8 +25,8 @@
 
    frontend:
       build:
-        context: './habitat-monitoring/frontEnd'
-        dockerfile: DockerFile
+        context: './habitat-monitoring/FrontEnd'
+        dockerfile: dockerfile
       container_name: frontend
       restart: always
       environment:
@@ -34,7 +34,7 @@
       networks:
         - backend
       depends_on:
-        - backend
+        - rest-api
       ports:
         - "80:80"
 

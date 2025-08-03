@@ -11,6 +11,10 @@ const Port = 3001;
 const app = express();
 const server = http.createServer(app);
 
+app.get('/', (_req, res) =>{
+    res.send('Main ws')
+});
+
 //configuracion de socket.io
 const io = new Server(server, {
     cors: {

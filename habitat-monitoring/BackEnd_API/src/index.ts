@@ -30,6 +30,10 @@ app.use('/api/v1/animal', AnimalRouter);
 app.use('/api/v1/camera', CameraRouter);
 app.use('/api/v1/dht11', dhtRouter);
 
+app.get('/', (_req, res) =>{
+    res.send('Main API')
+});
+
 const dht11Repository = new MySQLDHT11Repository();
 const saveDHT11DataUseCase = new SaveDHT11DataUseCase(dht11Repository);
 
